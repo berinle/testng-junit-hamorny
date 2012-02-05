@@ -1,6 +1,7 @@
 package foo;
 
 import com.sample.MyBean;
+import com.sample.MyBeanXML;
 import com.sample.MyService;
 import com.sample.config.AppConfig;
 import org.junit.Before;
@@ -29,9 +30,23 @@ public class ConfigTest {
     }
 
     @Test
-    public void testScope() throws Exception {
+    public void testBeanWhichIsAnnotationConfigured() throws Exception {
         MyBean b1 = ctx.getBean(MyBean.class);
         MyBean b2 = ctx.getBean(MyBean.class);
+        assertThat(b1, is(not(b2)));
+    }
+
+    @Test
+    public void testServiceScope() throws Exception {
+        MyService s1 = ctx.getBean(MyService.class);
+        MyService s2 = ctx.getBean(MyService.class);
+        assertThat(s1, is(not(s2)));
+    }
+
+    @Test
+    public void testBeanWhichIsXMLConfigured() throws Exception {
+        MyBeanXML b1 = ctx.getBean(MyBeanXML.class);
+        MyBeanXML b2 = ctx.getBean(MyBeanXML.class);
         assertThat(b1, is(not(b2)));
     }
 }

@@ -4,11 +4,13 @@ import com.sample.MyBean;
 import com.sample.MyService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * @author berinle
  */
 @Configuration
+@ImportResource("classpath:test.xml")
 public class AppConfig {
 
     @Bean
