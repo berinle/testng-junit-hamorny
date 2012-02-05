@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 /**
  * @author berinle
  */
-@Service
 @Scope("prototype")
+@Service
 public class MyService {
     @Autowired MyBean bean;
 

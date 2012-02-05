@@ -1,11 +1,13 @@
 package com.sample;
 
 import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 /**
  * @author berinle
  */
 @Scope(value = "prototype")
+@Component
 public class MyBean {
 
     public MyBean() {

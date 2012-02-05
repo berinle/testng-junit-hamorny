@@ -34,4 +34,11 @@ public class ConfigTest {
         MyBean b2 = ctx.getBean(MyBean.class);
         assertThat(b1, is(not(b2)));
     }
+
+    @Test
+    public void testServiceScope() throws Exception {
+        MyService s1 = ctx.getBean(MyService.class);
+        MyService s2 = ctx.getBean(MyService.class);
+        assertThat(s1, is(not(s2)));
+    }
 }
