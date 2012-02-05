@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 public class MyService {
     @Autowired MyBean bean;
 
+    public MyService(){
+        System.out.println("MyService.MyService");
+    }
+
     public void transfer(){
         System.out.println("MyService.transfer");
         bean.someComplexLogic();
